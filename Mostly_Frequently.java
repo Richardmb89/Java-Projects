@@ -22,7 +22,7 @@ public class Mostly_Frequently {
 public static Integer mostFreqent(int[]givenArray)
 
 {
-	//Create
+	//Create Hash Map that I named hm
 	HashMap<Integer, Integer>hm = new HashMap<Integer,Integer>();
 	int value = 1;
 	int counter=1;
@@ -42,22 +42,27 @@ public static Integer mostFreqent(int[]givenArray)
 			hm.put(givenArray[i],value);
 		
 	}
+	//The Map commmonKey only takes the first value
 	Map.Entry<Integer, Integer> commmonKey = hm.entrySet().iterator().next();
+	//Use commmonKey as a template or bar to compare other values in the hashmap
+	//Use commmonKey to create a had a large key and value to test
 	int largestValue = commmonKey.getValue();
 	int largestKey = commmonKey.getKey();
+	//Create another Map that will hold the key and value from the first hashmap
 	for(Map.Entry<Integer, Integer>map : hm.entrySet())
 	{
 		int val = map.getValue();
+		//pull the value out of the map and then compare it to commmonKey value
+		//if val is largest then largest value. val becomes the new largestValue
 		if(val>largestValue)
 		{
 			largestValue = val;
+			//once you have the largest value cope the key to largestKey
 			largestKey = map.getKey();
 		}
 		
 	}
-	//System.out.print(hm);
-	//System.out.println(commmonKey);
-	//System.out.print(givenArray+" , /n");
+	//Send back the largest key to show that this key repeats the most in the array
 	return largestKey;
 }
 }
