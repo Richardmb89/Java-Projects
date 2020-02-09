@@ -1,0 +1,25 @@
+public class AddingWithOutPlusCharacter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a = 2; 
+		int b = 3;
+		System.out.println(adding(a,b));
+
+	}
+
+	public static Integer adding(int a, int b) {
+		// TODO Auto-generated method stub
+		while(b != 0)
+		{
+		int data = a & b;
+		a = a ^ b;
+		b = data << 1;
+		
+		
+		//return a;
+	}
+		return a;
+	}
+
+}
