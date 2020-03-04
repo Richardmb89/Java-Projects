@@ -1,0 +1,40 @@
+public class SquarListAndSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] list1= {-1,2,3,4,5};
+		int[] list2= {23,45,12,2};
+		int[] list3= {0,1,2};
+		list2 = sorted(list2);
+		for(int i : list2)
+		{
+			System.out.print(i+" ");
+			
+		}	
+	
+	}
+
+	
+	private static int[] sorted(int[] list) {
+		// TODO Auto-generated method stub
+		int [] newList = new int[list.length];
+		int sum;
+		for(int i = 0; i < list.length; i++)
+		{
+			sum =list[i]*list[i];
+			newList[i] = sum;
+		}
+		int n = newList.length; 
+        for (int i = 0; i < n-1; i++) 
+            for (int j = 0; j < n-i-1; j++) 
+                if (newList[j] > newList[j+1]) 
+                { 
+                    // swap arr[j+1] and arr[i] 
+                    int temp = newList[j]; 
+                    newList[j] = newList[j+1]; 
+                    newList[j+1] = temp; 
+                } 
+		return newList;
+	}
+
+}
