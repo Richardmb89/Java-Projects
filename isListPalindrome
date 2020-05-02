@@ -1,0 +1,35 @@
+// Singly-linked lists are already defined with this interface:
+// class ListNode<T> {
+//   ListNode(T x) {
+//     value = x;
+//   }
+//   T value;
+//   ListNode<T> next;
+// }
+//
+boolean isListPalindrome(ListNode<Integer> l) {
+    ListNode<Integer> slow = l;
+    boolean isPalindrome = true;
+    Stack<Integer> stack = new Stack<>();
+    while(slow != null)
+    {
+        stack.push(slow.value);
+        slow = slow.next;
+    }
+    while(l != null)
+    {
+        int i = stack.pop();
+        if(l.value==i)
+        {
+            isPalindrome = true;
+        }
+        else
+        {
+            isPalindrome = false;
+            break;
+        }
+        l = l.next;
+    }
+
+return isPalindrome;
+}
